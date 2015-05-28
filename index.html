@@ -1,77 +1,87 @@
 <!DOCTYPE html>
 <html>
     
-<body>
-<p>Click the button to trigger a function that will Increase an interger by one and output it..</p>
+    <body>
+        <p>Click the button to trigger a function that will Increase an interger by one and output it..</p>
 
-<button style="height:420px; width:420px" onclick="myFunction()">Click me</button>
-<button style="position: absolute; left: 100px; top: 500px; " onclick="lad()">Buy a lad</button>
-    <button style="position: absolute; left: 100px; top: 520px; " onclick="moreclick()">More click banter</button>
+        <button style="height:420px; width:420px" onclick="myFunction()">Click me</button>
+        <button style="position: absolute; left: 100px; top: 500px; " onclick="lad()">Buy a lad</button>
+        <button style="position: absolute; left: 100px; top: 520px; " onclick="moreclick()">More click banter</button>
         <button style="position: absolute; left: 100px; top: 540px; " onclick="bigdawg()">Buy a big dawg</button>
-<p id="demo"></p>
-    <p style="position: absolute; top: 460px; " id="income"></p>
-    <p style="position: absolute; top: 490px; " id="gainz"></p>
+        
+        <p id="demo"></p>
+        <p style="position: absolute; top: 460px; " id="income"></p>
+        <p style="position: absolute; top: 490px; " id="gainz"></p>
         <p style="position: absolute; top: 500px; " id="click"></p>
         <p style="position: absolute; top: 520px; " id="ladcost"></p>
-    <p style="position: absolute; top: 540px; " id="clickcost"></p>
+        <p style="position: absolute; top: 540px; " id="clickcost"></p>
         <p style="position: absolute; top: 560px; " id="dawgcost"></p>
 
-<script>
-    var ladcost = 50;
-    var clickcost = 100;
-    var dawgcost = 420;
-    var clickdamage = 420;
-       var num = 1;
-    var income = 0;
-    var gain =setInterval(function () {myTimer()}, 500);
+    <script>
+        var ladcost = 50;
+        var clickcost = 100;
+        var dawgcost = 420;
+        var clickdamage = 420;
+        var num = 1;
+        var income = 0;
+        var gain =setInterval(function () {myTimer()}, 500);
 
-function myTimer() {
-    num = num + income / 2;
-    list();
-}
-function myFunction() {
-num = num + clickdamage;
-list();
-}
-    function lad() {
-if(num >= ladcost){
-    num = num - ladcost;
-    income++;
-    ladcost++;
-    list();
-}
-}
-        function bigdawg() {
-if(num >= dawgcost){
-    num = num - dawgcost;
-    income = income + 6;
-    dawgcost = dawgcost + 6;
-    list();
-}
-}
-    function moreclick() {
-        if(num >= clickcost){
-                num = num - clickcost;
-        clickdamage++;
-            clickcost++;
-list();
+        function myTimer() {
+            num = num + income / 2;
+            list();
         }
-    }
-    function list() {
-                var n = num.toString();
-    document.getElementById("demo").innerHTML = "Mad gainz:" + n;
-                        var i = income.toString();
-        document.getElementById("income").innerHTML = "Income:" + i;
-                                var c = clickdamage.toString();
-        document.getElementById("click").innerHTML = "Click gainz:" + c;
-                        var lc = ladcost.toString();
-                                var cc = clickcost.toString();
-                                var dc = dawgcost.toString();
-    document.getElementById("clickcost").innerHTML = "More click banter cost:" + cc;
-        document.getElementById("ladcost").innerHTML = "Lad cost:" + lc;
-        document.getElementById("dawgcost").innerHTML = "Big dawg cost:" + dc;
-    }
-</script>
 
-</body>
+        function myFunction() {
+        num = num + clickdamage;
+        list();
+        }
+        function lad() {
+            if(num >= ladcost){
+                num = num - ladcost;
+                income++;
+                ladcost++;
+                list();
+            }
+        }
+
+        function bigdawg() {
+            if(num >= dawgcost){
+                num = num - dawgcost;
+                income = income + 6;
+                dawgcost = dawgcost + 6;
+                list();
+            }
+        }
+
+        function moreclick() {
+            if(num >= clickcost){
+                num = num - clickcost;
+                clickdamage++;
+                clickcost++;
+                list();
+            }
+        }
+
+        function list() {
+            var n = num.toString();
+            document.getElementById("demo").innerHTML = "Mad gainz:" + n;
+
+            var i = income.toString();
+            document.getElementById("income").innerHTML = "Income:" + i;
+
+            var c = clickdamage.toString();
+            document.getElementById("click").innerHTML = "Click gainz:" + c;
+
+            var lc = ladcost.toString();
+            document.getElementById("ladcost").innerHTML = "Lad cost:" + lc;
+
+            var cc = clickcost.toString();
+            document.getElementById("clickcost").innerHTML = "More click banter cost:" + cc;
+
+            var dc = dawgcost.toString();
+            document.getElementById("dawgcost").innerHTML = "Big dawg cost:" + dc;      
+        }
+
+        </script>
+    </body>
 </html>
