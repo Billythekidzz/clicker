@@ -5,37 +5,41 @@
         <p>Click the button to trigger a function that will Increase an interger by one and output it..</p>
 
         <button style="height:420px; width:420px" onclick="myFunction()">Click me</button>
+        <button style="position: absolute; left: 100px; top: 480px; " onclick="fedora()">Buy a fedora</button>
         <button style="position: absolute; left: 100px; top: 500px; " onclick="lad()">Buy a lad</button>
         <button style="position: absolute; left: 100px; top: 520px; " onclick="moreclick()">More click banter</button>
         <button style="position: absolute; left: 100px; top: 540px; " onclick="bigdawg()">Buy a big dawg</button>
 
+
         <p id="demo"></p>
         <p style="position: absolute; top: 460px; " id="income"></p>
-        <p style="position: absolute; top: 490px; " id="gainz"></p>
+        <p style="position: absolute; top: 480px; " id="gainz"></p>
         <p style="position: absolute; top: 500px; " id="click"></p>
         <p style="position: absolute; top: 520px; " id="ladcost"></p>
         <p style="position: absolute; top: 540px; " id="clickcost"></p>
         <p style="position: absolute; top: 560px; " id="dawgcost"></p>
-<img src="snoop.gif" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="HTML5 Icon" style="width:248px;height:420px; position: absolute; left: 420px; top: 200px;">
+        <p style="position: absolute; top: 580px; " id="fedoracost"></p>
+        <img src="snoop.gif" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="HTML5 Icon" style="width:248px;height:420px; position: absolute; left: 420px; top: 200px;">
         
     <script>
         var ladcost = 50;
         var clickcost = 100;
         var dawgcost = 420;
+        var fedoracost = 50;
         var clickdamage = 1;
         var num = 1;
         var income = 0;
         var gain =setInterval(function () {myTimer()}, 500);
         
         function bigImg(x) {
-    x.style.height = "520px";
-    x.style.width = "300px";
-}
+            x.style.height = "520px";
+            x.style.width = "300px";
+        }
 
         function normalImg(x) {
-    x.style.height = "420px";
-    x.style.width = "248px";
-}
+            x.style.height = "420px";
+            x.style.width = "248px";
+        }
         function myTimer() {
             num = num + income / 2;
             list();
@@ -63,6 +67,16 @@
             }
         }
 
+        function fedora() {
+            if (num >= fedoracost) {
+                num = num - fedoracost;
+                clickdamage = clickdamage + 2;
+                fedoracost = fedoracost + 4;
+                list();
+
+            };
+        }
+
         function moreclick() {
             if(num >= clickcost){
                 num = num - clickcost;
@@ -74,22 +88,25 @@
 
         function list() {
             var n = num.toString();
-            document.getElementById("demo").innerHTML = "Mad gainz:" + n;
+            document.getElementById("demo").innerHTML = "Mad gainz: " + n;
 
             var i = income.toString();
-            document.getElementById("income").innerHTML = "Income:" + i;
+            document.getElementById("income").innerHTML = "Income: " + i;
 
             var c = clickdamage.toString();
-            document.getElementById("click").innerHTML = "Click gainz:" + c;
+            document.getElementById("click").innerHTML = "Click gainz: " + c;
 
             var lc = ladcost.toString();
-            document.getElementById("ladcost").innerHTML = "Lad cost:" + lc;
+            document.getElementById("ladcost").innerHTML = "Lad cost: " + lc;
 
             var cc = clickcost.toString();
-            document.getElementById("clickcost").innerHTML = "More click banter cost:" + cc;
+            document.getElementById("clickcost").innerHTML = "More click banter cost: " + cc;
 
             var dc = dawgcost.toString();
-            document.getElementById("dawgcost").innerHTML = "Big dawg cost:" + dc;      
+            document.getElementById("dawgcost").innerHTML = "Big dawg cost: " + dc;   
+
+            var fd = fedoracost.toString();
+            document.getElementById("fedoracost").innerHTML = "Fedora Cost: " + fd; 
         }
 
         </script>
