@@ -26,7 +26,16 @@
         var num = 1;
         var income = 0;
         var gain =setInterval(function () {myTimer()}, 500);
+        
+        function bigImg(x) {
+    x.style.height = "520x";
+    x.style.width = "300px";
+}
 
+        function normalImg(x) {
+    x.style.height = "420px";
+    x.style.width = "248px";
+}
         function myTimer() {
             num = num + income / 2;
             list();
